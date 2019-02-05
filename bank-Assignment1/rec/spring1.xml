@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+<bean id="list" class="com.ashu.assignment2.Question">
+  <property name="questionId" value="101"></property>
+  <property name="question" value="What is your name?"></property>
+  <property name="answer" >
+  <list>
+  		<value>Ashutosh</value>
+   		<value>Madhuri</value>
+   		 <value>chaya</value>
+  </list>
+  </property>
+  </bean>
+  <bean id="set" class="com.ashu.assignment2.Question">
+  <property name="questionId" value="102"></property>
+  <property name="question" value="What is your name?"></property>
+   <property name="answer" >
+  <set>
+  		<value>Ashutosh</value>
+   		<value>Madhuri</value>
+   		 <value>chaya</value>
+   		  <value>Ashutosh</value>
+  </set>
+  </property>
+</bean>
+<bean id="map" class="com.ashu.assignment2.MapQuestion">
+  <property name="questionId" value="103"></property>
+  <property name="question" value="What is java"></property>
+   <property name="answer" >
+  <map>
+  		<entry key="java is platform indepedent" value="1"></entry>
+  		<entry key="java is 100% object oriented" value="2"></entry>
+  		<entry key="java is byte code verifier" value="3"></entry>
+  </map>
+  </property>
+</bean>
+
+</beans>

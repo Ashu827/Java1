@@ -1,0 +1,92 @@
+src/Assignment_9/Assignment5.java:1:	Package name contains upper case characters
+src/Assignment_9/Assignment5.java:1:	Package name contains upper case characters
+src/Assignment_9/Assignment5.java:1:	Package name contains upper case characters
+src/Assignment_9/Assignment5.java:1:	Package name contains upper case characters
+src/Assignment_9/Assignment5.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/Assignment_9/Assignment5.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/Assignment_9/Assignment5.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/Assignment_9/Assignment5.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/Assignment_9/Assignment5.java:5:	Header comments are required
+src/Assignment_9/Assignment5.java:5:	Header comments are required
+src/Assignment_9/Assignment5.java:5:	Header comments are required
+src/Assignment_9/Assignment5.java:5:	Header comments are required
+src/Assignment_9/Assignment5.java:7:	Parameter 'args' is not assigned and could be declared final
+src/Assignment_9/Assignment5.java:7:	Parameter 'args' is not assigned and could be declared final
+src/Assignment_9/Assignment5.java:7:	Parameter 'args' is not assigned and could be declared final
+src/Assignment_9/Assignment5.java:7:	Parameter 'args' is not assigned and could be declared final
+src/Assignment_9/Assignment5.java:7:	Public method and constructor comments are required
+src/Assignment_9/Assignment5.java:7:	Public method and constructor comments are required
+src/Assignment_9/Assignment5.java:7:	Public method and constructor comments are required
+src/Assignment_9/Assignment5.java:7:	Public method and constructor comments are required
+src/Assignment_9/Assignment5.java:7:	The method 'main(String)' has a NCSS line count of 25.
+src/Assignment_9/Assignment5.java:7:	The method 'main(String)' has a NCSS line count of 25.
+src/Assignment_9/Assignment5.java:7:	The method 'main(String)' has a NCSS line count of 25.
+src/Assignment_9/Assignment5.java:7:	The method 'main(String)' has a NCSS line count of 25.
+src/Assignment_9/Assignment5.java:8:	Local variable 'scanner' could be declared final
+src/Assignment_9/Assignment5.java:8:	Local variable 'scanner' could be declared final
+src/Assignment_9/Assignment5.java:8:	Local variable 'scanner' could be declared final
+src/Assignment_9/Assignment5.java:8:	Local variable 'scanner' could be declared final
+src/Assignment_9/Assignment5.java:9:	System.out.println is used
+src/Assignment_9/Assignment5.java:9:	System.out.println is used
+src/Assignment_9/Assignment5.java:9:	System.out.println is used
+src/Assignment_9/Assignment5.java:9:	System.out.println is used
+src/Assignment_9/Assignment5.java:10:	Local variable 'salary' could be declared final
+src/Assignment_9/Assignment5.java:10:	Local variable 'salary' could be declared final
+src/Assignment_9/Assignment5.java:10:	Local variable 'salary' could be declared final
+src/Assignment_9/Assignment5.java:10:	Local variable 'salary' could be declared final
+src/Assignment_9/Assignment5.java:13:	System.out.println is used
+src/Assignment_9/Assignment5.java:13:	System.out.println is used
+src/Assignment_9/Assignment5.java:13:	System.out.println is used
+src/Assignment_9/Assignment5.java:13:	System.out.println is used
+src/Assignment_9/Assignment5.java:17:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:17:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:17:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:17:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:18:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:18:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:18:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:18:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:19:	System.out.println is used
+src/Assignment_9/Assignment5.java:19:	System.out.println is used
+src/Assignment_9/Assignment5.java:19:	System.out.println is used
+src/Assignment_9/Assignment5.java:19:	System.out.println is used
+src/Assignment_9/Assignment5.java:23:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:23:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:23:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:23:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:24:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:24:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:24:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:24:	Local variable 'remainingAmount' could be declared final
+src/Assignment_9/Assignment5.java:25:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:25:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:25:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:25:	Local variable 'tax' could be declared final
+src/Assignment_9/Assignment5.java:26:	System.out.println is used
+src/Assignment_9/Assignment5.java:26:	System.out.println is used
+src/Assignment_9/Assignment5.java:26:	System.out.println is used
+src/Assignment_9/Assignment5.java:26:	System.out.println is used
+src/Assignment_9/Assignment5.java:30:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:30:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:30:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:30:	Local variable 'amount' could be declared final
+src/Assignment_9/Assignment5.java:31:	Local variable 'tax1' could be declared final
+src/Assignment_9/Assignment5.java:31:	Local variable 'tax1' could be declared final
+src/Assignment_9/Assignment5.java:31:	Local variable 'tax1' could be declared final
+src/Assignment_9/Assignment5.java:31:	Local variable 'tax1' could be declared final
+src/Assignment_9/Assignment5.java:32:	Local variable 'tax2' could be declared final
+src/Assignment_9/Assignment5.java:32:	Local variable 'tax2' could be declared final
+src/Assignment_9/Assignment5.java:32:	Local variable 'tax2' could be declared final
+src/Assignment_9/Assignment5.java:32:	Local variable 'tax2' could be declared final
+src/Assignment_9/Assignment5.java:33:	Local variable 'amount2' could be declared final
+src/Assignment_9/Assignment5.java:33:	Local variable 'amount2' could be declared final
+src/Assignment_9/Assignment5.java:33:	Local variable 'amount2' could be declared final
+src/Assignment_9/Assignment5.java:33:	Local variable 'amount2' could be declared final
+src/Assignment_9/Assignment5.java:34:	Local variable 'tax3' could be declared final
+src/Assignment_9/Assignment5.java:34:	Local variable 'tax3' could be declared final
+src/Assignment_9/Assignment5.java:34:	Local variable 'tax3' could be declared final
+src/Assignment_9/Assignment5.java:34:	Local variable 'tax3' could be declared final
+src/Assignment_9/Assignment5.java:36:	System.out.println is used
+src/Assignment_9/Assignment5.java:36:	System.out.println is used
+src/Assignment_9/Assignment5.java:36:	System.out.println is used
+src/Assignment_9/Assignment5.java:36:	System.out.println is used

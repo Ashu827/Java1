@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!--  ><bean id="hiii" class="com.ashu.spring.Hello" scope="singleton"></bean-->
+	
+	<!-- <bean id="info" class="com.ashu.spring.Customer">
+	
+	<property name="customerId" value="12345" />
+	<property name="customerName" value="Ashu" />
+	<property name="customerContact" value="847404" />
+	<property name="Address" ref="address" />
+	</bean>
+	<bean id="address" class="com.ashu.spring.Address">
+	
+	<property name="street" value="Whitefield" />
+	<property name="city" value="Bangalore" />
+	<property name="state" value="Karnataka" />
+	<property name="zip" value="740404" />
+	<property name="country" value="India" />
+	
+	</bean> -->
+	
+	<bean id="info" class="com.ashu.spring.Customer">
+	
+	<constructor-arg value="12345" />
+	<constructor-arg  value="Ashu" />
+	<constructor-arg  value="847404" />
+	<constructor-arg  ref="address" />
+	</bean>
+	<bean id="address" class="com.ashu.spring.Address">
+	
+	<constructor-arg  value="Whitefield" />
+	<constructor-arg  value="Bangalore" />
+	<constructor-arg  value="Karnataka" />
+	<constructor-arg value="740404" />
+	<constructor-arg  value="India" />
+	
+	</bean> 
+</beans>

@@ -1,0 +1,52 @@
+Found a 10 line (44 tokens) duplication in the following files: 
+Starting at line 12 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\com\ashu\classassignment\Assignment2.java
+Starting at line 11 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment8.java
+
+			for(int j=i+1;j<Array.length;j++)
+			{
+				if(Array[i]>Array[j])
+				{
+				temp=Array[i];
+				Array[i]=Array[j];
+				Array[j]=temp;
+				}
+			}
+			System.out.println(Array[i]);
+=====================================================================
+Found a 3 line (28 tokens) duplication in the following files: 
+Starting at line 10 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\com\ashu\classassignment\Assignment2.java
+Starting at line 9 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment8.java
+
+		for(int i=0;i<Array.length;i++)
+		{
+			for(int j=i+1;j<Array.length;j++)
+=====================================================================
+Found a 5 line (28 tokens) duplication in the following files: 
+Starting at line 5 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment5.java
+Starting at line 5 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment3.java
+
+public class Assignment5 {
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter value for CTC");
+=====================================================================
+Found a 5 line (28 tokens) duplication in the following files: 
+Starting at line 5 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment4.java
+Starting at line 6 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment1.java
+
+public class Assignment4 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter marks for 3 subjects");
+=====================================================================
+Found a 5 line (26 tokens) duplication in the following files: 
+Starting at line 5 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment9.java
+Starting at line 5 of C:\164120_Ashutosh\Day4_java\DataStructureProject\src\Assignment_9\Assignment7.java
+
+public class Assignment9 {
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		int Array[][]=new int[3][3];

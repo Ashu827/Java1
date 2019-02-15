@@ -1,0 +1,37 @@
+1.show collections
+addresses
+db.addresses.find()
+
+2. db.addresses.find().pretty()
+
+3. db.addresses.find({},{"restaurant_id":1,"name":1, "borough":1, "cuisine":1, _id:0})
+
+4. db.addresses.find({},{"restaurant_id":1,"name":1, "borough":1, "address.zipcode":1, _id:0}).pretty()
+
+5 db.addresses.aggregate([{$match:{borough:"Bronx"}},{$limit:5}]).pretty()
+
+6 db.addresses.find({"borough":"Bronx"}).pretty()
+
+7 db.addresses.aggregate([{$match:{borough:"Bronx"}},{$skip:5},{$limit:5}]).pretty()
+
+8 db.addresses.find({"grades.score":{$gt : 80}}).pretty()
+
+9 db.addresses.find({"grades.score":{$gt : 80, $lt: 100}}).pretty()
+
+10 db.addresses.find({"address.coord":{$lt:-95.754168}}).pretty()
+
+11 db.addresses.find({ $and: [ {"cuisine":{$ne : "American "}}, {"grades.score":{$gt :70}},
+ {"address.coord":{$lt:-65.754168}} ]} ).pretty()
+
+12 db.addresses.find({ $and: [ {"cuisine":{$ne : "American "}}, {"grades.score":{$gt :70}},
+ {"address.coord":{$lt:-65.754168}} ]} ).pretty()
+
+13 db.addresses.find({ $and: [ {"cuisine":{$ne : "American "}}, {"grades.grade":"A"}],
+ {$sort:{"cuisine":-1}}  }).pretty()
+
+db.addresses.find( {
+                             "cuisine" : {$ne : "American "},
+                             "grades.grade" :"A",
+                             "borough": {$ne : "Brooklyn"}
+                       } 
+                    ).sort({"cuisine":-1});

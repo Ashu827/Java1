@@ -1,0 +1,295 @@
+b.Movies.update({"title":"The Hobbit: The Desolation of Smaug","synopsis":{$exists:false}},{$set:{"synopsis":"The dwarves, along with Bilbo
+2018-12-27T14:59:17.657+0530 E QUERY    [js] SyntaxError: unterminated string literal @(shell):1:110
+> Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug.
+...  Bilbo Baggins is in possession of a mysterious and magical ring."}})
+2018-12-27T14:59:22.202+0530 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:8
+> db.Movies.update({"title":"The Hobbit: The Desolation of Smaug","synopsis":{$exists:false}},{$set:{"synopsis":"The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Movies.find().pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af395"),
+        "title" : "Fight Club",
+        "writer" : "Chuck Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af396"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af397"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}
+> db.Movies.update(
+...    { "title":"Pulp Fiction" },
+...    { $push: { "actors": "Samuel L. Jackson"  }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Movies.find().pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af395"),
+        "title" : "Fight Club",
+        "writer" : "Chuck Palahniuk",
+        "year" : 1999,
+        "actors" : [
+                "Brad Pitt",
+                "Edward Norton"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af396"),
+        "title" : "Pulp Fiction",
+        "writer" : "Quentin Tarantino",
+        "year" : 1994,
+        "actors" : [
+                "John Travolta",
+                "Uma Thurman",
+                "Samuel L. Jackson"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af397"),
+        "title" : "Inglorious Basterds",
+        "writer" : "Quentin Tarantino",
+        "year" : 2009,
+        "actors" : [
+                "Brad Pitt",
+                "Diane Kruger Eli Roth"
+        ]
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}
+> db.Movies.find({$text:{$search:"Bilbo"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.find({$text:{$search:"Bilbo"}})db.Movies.find({$text:{$search:"Bilbo"}})
+2018-12-27T15:20:45.328+0530 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:41
+>
+> db.stores.find( { $text: { $search: "synopsis \"Bilbo" } } )
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query (no such collection 'mongo_db_practise.stores')",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movie.find( { $text: { $search: "synopsis \"Bilbo" } } )
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.find( { $text: { $search: "synopsis \"Bilbo" } } )
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.findOne({"synopsis" : {$regex : ".*Bilbo*"}})
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+> db.Movies.find({"synopsis" : {$regex : ".*Bilbo*"}})
+{ "_id" : ObjectId("5c247b62a67404bd3a0af398"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit", "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring." }
+{ "_id" : ObjectId("5c247b62a67404bd3a0af399"), "title" : "Avatar", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
+{ "_id" : ObjectId("5c249573a67404bd3a0af39a"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug." }
+> db.Movies.find({"synopsis" : {$regex : ".*Bilbo*"}}).pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}
+> db.Movies.find({"synopsis" : {$regex : ".*Bilbo0*"}}).pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}
+> db.Movies.find({"synopsis" : {$regex : ".*Bilbo0*"}}).pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}
+> db.Movies.find({"synopsis" : {$search : ".*Bilbo*"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $search",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Movies.find({$text : {$search : ".*Bilbo*"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.find({$text : {$search : "Bilbo"}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.find({$text : {$search : "Bilbo"}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "text index required for $text query",
+        "code" : 27,
+        "codeName" : "IndexNotFound"
+}
+> db.Movies.createIndex({"synopsis":"text"})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.Movies.find({$text : {$search : "Bilbo"}}).pretty()
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af398"),
+        "title" : "The Hobbit: The Desolation of Smaug",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2013,
+        "franchise" : "The Hobbit",
+        "synopsis" : "The dwarves, along with Bilbo Baggins is in possesssion of a mysterious and magical ring."
+}
+{
+        "_id" : ObjectId("5c247b62a67404bd3a0af399"),
+        "title" : "Avatar",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "franchise" : "The Hobbit",
+        "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+}
+{
+        "_id" : ObjectId("5c249573a67404bd3a0af39a"),
+        "title" : "The Hobbit: An Unexpected Journey",
+        "writer" : "J.R.R. Tolkein",
+        "year" : 2012,
+        "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the  Lonely Mountain with a spirited group of dwarves to reclaim their mountain home -  and the gold within it - from the dragon Smaug."
+}

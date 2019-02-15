@@ -1,0 +1,293 @@
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> show collections
+> show dbs
+admin              0.000GB
+config             0.000GB
+local              0.000GB
+mongo_db_practise  0.000GB
+users              0.000GB
+> db.users.find().pretty()
+> db.users.insert([
+... {
+... username : "GoodGuyGreg",
+...  first_name : "Good Guy",
+... last_name : "Greg"
+... },
+... {
+...  username : "ScumbagSteve",
+...  first_name :"Scumbag",
+...  last_name : "Steve"
+... },
+... {
+... username : "GoodGuyGreg",
+... title : "Reports a bug in your code",
+... body : "Sends you a Pull Request"
+... },
+... {
+... username : "ScumbagSteve",
+...  title : "Borrows something",
+... body : "Sells it"
+... },
+... {
+... username : "ScumbagSteve",
+... title : "Borrows everything",
+... body : "The end"
+... },
+... {
+... username : "ScumbagSteve",
+... title : "Forks your repo on github",
+... body : "Sets to private"
+... }
+... ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 6,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eb8"),
+        "username" : "GoodGuyGreg",
+        "first_name" : "Good Guy",
+        "last_name" : "Greg"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eb9"),
+        "username" : "ScumbagSteve",
+        "first_name" : "Scumbag",
+        "last_name" : "Steve"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eba"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebb"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebc"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebd"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+> db.posts.insert([
+... {
+... username : "GoodGuyGreg",
+... title : "Passes out at party",
+... body : "Wakes up early and cleans house"
+... },
+... {
+... username : "GoodGuyGreg",
+... title : "Steals your identity",
+... body : "Raises your credit score"
+... }
+... ]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+>
+> db.comments.insert([
+... {
+... username : "GoodGuyGreg",
+... comment : "Hope you got a good deal!",
+... post : ObjectId("5c24c1c4a67404bd3a0af39f"),
+... document: "Borrows something"
+... },
+... {
+... username : "GoodGuyGreg",
+... comment : "What's mine is yours!",
+...  post : ObjectId("5c24c1c4a67404bd3a0af39f"),
+... document: "Borrows everything"
+... },
+... {
+... username : "GoodGuyGreg",
+... comment : "Don't violate the licensing agreement!",
+... post : ObjectId("5c24c1c4a67404bd3a0af39f"),
+... document: "Forks your repo on github"
+... },
+... {
+... username : "ScumbagSteve",
+... comment : "It still isn't clean",
+... post : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+... document: "Passes out at party"
+... },
+... {
+... username : "ScumbagSteve",
+... comment : "It still isn't clean",
+... post : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+... document: "Passes out at party"
+... },
+... {
+... username : "ScumbagSteve",
+... comment : "Denied your PR cause I found a hack",
+... post : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+... document: "Reports a bug in your code"
+... }
+... ]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 6,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.comments.find().pretty()
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec0"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Hope you got a good deal!",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af39f"),
+        "document" : "Borrows something"
+}
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec1"),
+        "username" : "GoodGuyGreg",
+        "comment" : "What's mine is yours!",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af39f"),
+        "document" : "Borrows everything"
+}
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec2"),
+        "username" : "GoodGuyGreg",
+        "comment" : "Don't violate the licensing agreement!",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af39f"),
+        "document" : "Forks your repo on github"
+}
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec3"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+        "document" : "Passes out at party"
+}
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec4"),
+        "username" : "ScumbagSteve",
+        "comment" : "It still isn't clean",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+        "document" : "Passes out at party"
+}
+{
+        "_id" : ObjectId("5c24c60d2a92a5e9b4b44ec5"),
+        "username" : "ScumbagSteve",
+        "comment" : "Denied your PR cause I found a hack",
+        "post" : ObjectId("5c24c1c4a67404bd3a0af3a0"),
+        "document" : "Reports a bug in your code"
+}
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eb8"),
+        "username" : "GoodGuyGreg",
+        "first_name" : "Good Guy",
+        "last_name" : "Greg"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eb9"),
+        "username" : "ScumbagSteve",
+        "first_name" : "Scumbag",
+        "last_name" : "Steve"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44eba"),
+        "username" : "GoodGuyGreg",
+        "title" : "Reports a bug in your code",
+        "body" : "Sends you a Pull Request"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebb"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows something",
+        "body" : "Sells it"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebc"),
+        "username" : "ScumbagSteve",
+        "title" : "Borrows everything",
+        "body" : "The end"
+}
+{
+        "_id" : ObjectId("5c24c55d2a92a5e9b4b44ebd"),
+        "username" : "ScumbagSteve",
+        "title" : "Forks your repo on github",
+        "body" : "Sets to private"
+}
+> db.posts.find().pretty()
+{
+        "_id" : ObjectId("5c24c6012a92a5e9b4b44ebe"),
+        "username" : "GoodGuyGreg",
+        "title" : "Passes out at party",
+        "body" : "Wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("5c24c6012a92a5e9b4b44ebf"),
+        "username" : "GoodGuyGreg",
+        "title" : "Steals your identity",
+        "body" : "Raises your credit score"
+}
+> db.posts.insert([
+... {
+... username : "GoodGuyGreg",
+... title : "Reports a bug in your code",
+... body : "Sends you a Pull Request"
+... },
+... {
+... username : "ScumbagSteve",
+... title : "Borrows something",
+...  body : "Sells it"
+... },
+... {
+...  username : "ScumbagSteve",
+...  title : "Borrows everything",
+... body : "The end"
+...  },
+... {
+... username : "ScumbagSteve",
+... title : "Forks your repo on github",
+... body : "Sets to private"
+... }
+...
+... ]);
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 4,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+>

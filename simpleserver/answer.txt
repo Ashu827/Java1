@@ -1,0 +1,21 @@
+
+3.
+const fs = require('fs');
+
+fs.readdir('./', function(err, items) {
+if(err)
+return console.error(err);
+console.log(items);
+
+for (var i=0; i<items.length; i++) {
+console.log(items[i]);
+}
+
+4.
+
+var fs = require("fs");
+
+var writeStream = fs.createWriteStream("Write_A_File.txt");
+writeStream.write("Hello Everyone... ");
+writeStream.write("Write Whatever You Want..");
+writeStream.end();
